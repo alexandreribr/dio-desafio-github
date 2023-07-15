@@ -1,0 +1,147 @@
+RESUMO GIT
+=====> configura de forma global(em todo comp.)
+ Git Config --global user.name "seu user name"
+ Git config --global user.email "seu@email"
+======> configura de forma local
+basta trocar por --local ou apenas nao adicionar nenhum parametro.
+
+====> mostra historico
+
+git log
+
+git log --oneline
+
+===> mostra o que foi alterado no codigo
+git log -p  
+
+====> SITE COM MILHOES DE COMANDOS GIT LOG https://devhints.io/git-log
+
+.gitignore -> coloca o arquivo q deseja ignorar. pra na hora do commit nao ficar perguntando
+
+
+====> Diretorio so contem as alterações do arquivo, nao tera uma copia dos arquivos. Permite adicionar o diretorio escolhido como remoto Com este comando nós criamos um repositório que não terá a working tree, ou seja, não conterá uma cópia dos nossos arquivos. Como o repositório servirá apenas como servidor, para que outros membros da equipe sincronizem seus trabalhos, poupamos espaço de armazenamento desta forma.
+
+git init --bare
+
+=====> Informa que aquele endereço tem um repositorio remoto
+
+git remote add nome_desejado endereço_do_diretorio
+
+===> mostra os repositorios remotos que tem
+
+git remote
+
+===>garantir que o endereco esteja correto. mostra de onde ele vai buscar os dados e para onde ele vai enviar os dados
+
+git remote -v
+
+======> para trazer um repositorio para sua maquina 
+
+git clone endereço_do_repositorio
+
+-----pode tb enviar para uma pasta
+
+git clone endereço_do_repositorio nome_da_pasta_destino(caso voce deseje)
+
+=====> enviando para o repositorio
+
+git push nome_rep onde_estam_na_sua_maquina
+
+====> renomear o repositorio remoto
+
+git remote rename nome_atual nome_desejado
+
+=====> trazendo os arquivos depois de clonar o rep.
+
+git pull nome_rep nome_da_branch
+
+======> Trazendo a atualização de uma branch pra master criando uma commit de merge
+
+git merge nome_da_branch
+
+=======> Trazendo para master e mantem como sendo o ultimo trabalho atualizado
+
+git rebase nome_da_branch
+
+========> trazendo a log com linhas de desenvolvimento
+
+git log --graph
+
+============>navegando pelo historio Control Z
+
+git checkout --  nome_do_arquivo
+
+============> Criar uma branch
+
+git checkout -b nome_da_branch
+
+=====> desmarca uma mudança que precis ser commitada
+
+git reset estado_em_q_estava(é informado pelo proprio git atraves do git status)
+
+=====> desfazendo um commit
+
+git revert numero_do_hash
+
+============> desfazem alterações antes de adicioná-las (1); depois de adicioná-las, mas antes de commitá-las (2); e após realizar o commit (3)
+1 - git checkout
+
+2 - git reset
+
+3 - git revert
+
+========> salva de forma temporaria uma alteração feita mas que ainda nao pode dar um commit. Nao vai aparecer no git log essa alteração, mas ela fica mantida de forma temporaria. 
+
+git stash
+================> lista tudo que esta salvo de forma temporaria
+git stash list   
+================> pega da lista e aplica pra trabalhar, mas MANTEM na lista
+
+git stash apply numero_da_stash
+
+===========> para tirar da lista 
+
+git stash drop
+
+===========> como pegar da lista para usar e ja tirar dela
+
+git stash pop
+
+===========> Ver a diferença entre os commites
+
+git diff numero_do_hash..numero_do_hash    (os .. significa até)
+
+git diff  SOZINHO mostra o que foi alterado e nao foi commitado
+
+====> TAGS
+git tag -a nome_da_tag -m "caso queira uma msg pode ser add tb" 
+
+====> Passar a branch local para a lab
+git push -u <nome repositório remoto(geralmente o nome é origin)> <nome da branch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
